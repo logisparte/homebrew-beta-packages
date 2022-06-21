@@ -1,0 +1,29 @@
+﻿name: cd
+
+on:
+  workflow_run:
+    workflows:
+      - ci
+    types:
+      - completed
+
+env:
+  GIT_EMAIL: logisparte-helot@users.noreply.github.com
+  RELEASE_GITHUB_ACCESS_TOKEN: ${{ secrets.HELOT_GITHUB_ACCESS_TOKEN }}
+  PULL_REQUEST_BRANCH: ${{ github.event.workflow_run.head_branch }}
+
+jobs:
+  release:
+    if: |
+      github.event.workflow_run.conclusion == 'success'
+      && github.event.workflow_run.event == 'pull_request'
+      && github.event.workflow_run.head_commit.author.email == env.GIT_EMAIL
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v2
+
+      - name: Merge successful pull request
+        run: |
+          echo "$RELEASE_GITHUB_ACCESS_TOKEN" | gh auth login --with-token
+          gh pr merge "$PULL_REQUEST_BRANCH" --rebase

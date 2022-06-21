@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  pull_request:
+    branches:
+      - master
+
+env:
+  TAP_DIRECTORY: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/logisparte/homebrew-beta-packages
+
+jobs:
+  check_branch:
+    runs-on: ubuntu-22.04
+    container:
+      image: homebrew/brew:3.5.2
+    steps:
+      - name: Retrieve package index
+        run: |
+          brew tap logisparte/beta-packages
+          brew update
+
+      - name: Check all package definitions
+        run: |
+          cd "$TAP_DIRECTORY" || exit 1
+          git checkout "$GITHUB_HEAD_REF"
+          for FORMULA_PATH in *.rb; do
+            FORMULA="$(basename "$FORMULA_PATH" | cut -d "." -f 1)"
+            brew cat "$FORMULA"
+            brew install "$FORMULA"
+            brew audit "$FORMULA"
+            brew test "$FORMULA"
+            brew uninstall "$FORMULA"
+          done
