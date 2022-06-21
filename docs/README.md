@@ -7,6 +7,11 @@ is to allow developers to experiment with new features before their official rel
 packages are subject to breaking changes without prior notice and depending on any of them for
 production purposes in highly discouraged
 
+## License
+
+`homebrew-beta-packages` is _free as in freedom_, under the terms of the
+[GPL-3.0 License](/LICENSE)
+
 ## Usage
 
 First, track the package index:

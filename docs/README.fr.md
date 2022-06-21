@@ -8,6 +8,11 @@ publication officielle. Tous les paquets sont exposés à des changements non-r�
 sans préavis et donc dépendre sur n'importe quel d'entre eux à des fins de production est
 hautement découragé
 
+## Licence
+
+`homebrew-beta-packages` est _libre comme dans liberté_, sous les termes de la
+[licence GPL-3.0](/LICENSE)
+
 ## Usage
 
 Tout d'abord, suivre l'index de paquet :
