@@ -18,7 +18,7 @@ jobs:
       github.event.workflow_run.conclusion == 'success'
       && github.event.workflow_run.event == 'pull_request'
       && github.event.workflow_run.head_commit.author.email == env.GIT_EMAIL
-    runs-on: ubuntu-22.04
+    runs-on: macos-12
     steps:
       - name: Clone project
         uses: actions/checkout@v2

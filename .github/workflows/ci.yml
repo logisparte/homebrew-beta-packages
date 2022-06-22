@@ -7,11 +7,10 @@ on:
 
 jobs:
   check_branch:
-    runs-on: ubuntu-22.04
-    container:
-      image: homebrew/brew:3.5.2
-      env:
-        TAP_DIRECTORY: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps
+    runs-on: macos-12
+    env:
+      HOMEBREW_NO_INSTALL_CLEANUP: true
+      HOMEBREW_DIRECTORY: /usr/local/Homebrew
     steps:
       - name: Retrieve package index
         run: |
@@ -20,8 +19,9 @@ jobs:
 
       - name: Check all package definitions
         run: |
-          cd "$TAP_DIRECTORY/logisparte/homebrew-beta-packages" || exit 1
+          cd "$HOMEBREW_DIRECTORY/Library/Taps/logisparte/homebrew-beta-packages" || exit 1
           git checkout "$GITHUB_HEAD_REF"
+          brew developer on
           for FORMULA_PATH in *.rb; do
             FORMULA="$(basename "$FORMULA_PATH" | cut -d "." -f 1)"
             brew cat "$FORMULA"
