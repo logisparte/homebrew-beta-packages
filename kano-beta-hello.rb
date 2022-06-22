@@ -5,7 +5,7 @@ class KanoBetaHello < Formula
   homepage "https://github.com/logisparte/kano"
   url "https://github.com/logisparte/kano/releases/download/beta-hello/kano.tar.gz"
   version "beta-hello"
-  sha256 "398031704c4165d54944a5415d692d95b69a18c2fef64ac3d4abd4ff7ffce6c2"
+  sha256 "9917dd0c541f311506258d0be028355e8e972312ed2e10b03da069597560ad13"
   license "GPL-3.0-only"
   depends_on "docker" => :optional
   depends_on "git" => :optional
