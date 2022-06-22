@@ -17,13 +17,14 @@ jobs:
     if: |
       github.event.workflow_run.conclusion == 'success'
       && github.event.workflow_run.event == 'pull_request'
-      && github.event.workflow_run.head_commit.author.email == env.GIT_EMAIL
     runs-on: macos-12
     steps:
       - name: Clone project
+        if: github.event.workflow_run.head_commit.author.email == env.GIT_EMAIL
         uses: actions/checkout@v2
 
       - name: Merge successful pull request
+        if: github.event.workflow_run.head_commit.author.email == env.GIT_EMAIL
         run: |
           echo "$RELEASE_GITHUB_ACCESS_TOKEN" | gh auth login --with-token
           gh pr merge "$PULL_REQUEST_BRANCH" --rebase
