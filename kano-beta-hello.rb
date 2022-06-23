@@ -4,8 +4,8 @@ class KanoBetaHello < Formula
   desc "Software engineering task management CLI"
   homepage "https://github.com/logisparte/kano"
   url "https://github.com/logisparte/kano/releases/download/beta-hello/kano.tar.gz"
-  version "c665c88"
-  sha256 "be32340395510fb906784ce553d9be786469a77e26ee5dd862f00ebd490944c0"
+  version "0.0.0-0e5e540"
+  sha256 "9cc6fc7a324b9d9ea217785e0b26e978bd287c64600580ff19904542a8debb6e"
   license "GPL-3.0-only"
   depends_on "docker" => :optional
   depends_on "git" => :optional
