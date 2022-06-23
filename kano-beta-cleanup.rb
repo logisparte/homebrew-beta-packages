@@ -4,8 +4,8 @@ class KanoBetaCleanup < Formula
   desc "Software engineering task management CLI"
   homepage "https://github.com/logisparte/kano"
   url "https://github.com/logisparte/kano/releases/download/beta-cleanup/kano.tar.gz"
-  version "0.0.0-962e18d"
-  sha256 "17f1f6a3a2007675499956dea3ebf83b92d5d20d18a47aa5a21027dd7daafc7c"
+  version "0.0.0-9fa0022"
+  sha256 "36e91ae53c06fd0c3e89957e87cd6782ccf22c32a9e10cee56436a455dfda7b4"
   license "GPL-3.0-only"
   depends_on "docker" => :optional
   depends_on "git" => :optional
