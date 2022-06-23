@@ -22,8 +22,8 @@ jobs:
           cd "$HOMEBREW_DIRECTORY/Library/Taps/logisparte/homebrew-beta-packages" || exit 1
           git checkout "$GITHUB_HEAD_REF"
           brew developer on
-          for FORMULA_PATH in *.rb; do
-            FORMULA="$(basename "$FORMULA_PATH" | cut -d "." -f 1)"
+          for FILE in $(ls | grep .rb); do
+            FORMULA="$(echo "$FILE" | cut -d "." -f 1)"
             brew cat "$FORMULA"
             brew install "$FORMULA"
             brew audit "$FORMULA"
