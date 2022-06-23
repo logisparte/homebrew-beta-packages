@@ -4,8 +4,8 @@ class KanoBetaFullCycle < Formula
   desc "Software engineering task management CLI"
   homepage "https://github.com/logisparte/kano"
   url "https://github.com/logisparte/kano/releases/download/beta-full-cycle/kano.tar.gz"
-  version "0.0.0-10618e4"
-  sha256 "8282f97ec63648fef07076e7e9ed474123d925eb86889fefa8d6961b9d3542f8"
+  version "0.0.0-65729ab"
+  sha256 "516d37cb374db5b2b89b0b821a86ff20cb37e474b193aac4d930f3828babf65c"
   license "GPL-3.0-only"
   depends_on "docker" => :optional
   depends_on "git" => :optional
