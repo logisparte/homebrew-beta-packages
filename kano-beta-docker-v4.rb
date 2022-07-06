@@ -4,8 +4,8 @@ class KanoBetaDockerV4 < Formula
   desc "Software engineering workflow automation CLI"
   homepage "https://github.com/logisparte/kano"
   url "https://github.com/logisparte/kano/releases/download/beta-docker-v4/kano.tar.gz"
-  version "0.0.0-647afb4"
-  sha256 "87ae56e44a83116302d1541743362e7cef074afabc6cab0b42e893dc73ee21d8"
+  version "0.0.0-6ed9b51"
+  sha256 "62a1f347671b8a76cf59a201e36f2e28cd252fcbdd185e7018b21a1e483a3b71"
   license "GPL-3.0-only"
   depends_on "git" => :optional
 
