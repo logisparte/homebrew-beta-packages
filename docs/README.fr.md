@@ -10,8 +10,7 @@ hautement découragé
 
 ## Licence
 
-`homebrew-beta-packages` est _libre comme dans liberté_, sous les termes de la
-[licence GPL-3.0](/LICENSE)
+`homebrew-beta-packages` est distribué sous les termes de la [licence Apache 2.0](/LICENSE)
 
 ## Usage
 
